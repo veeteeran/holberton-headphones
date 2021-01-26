@@ -152,17 +152,52 @@
                             <legend class="visually-hidden">Your personal information</legend>
                             <div class="form-group col-1-2">
                                 <label for="your-name">Name</label>
-                                <div class="form-field"><span class="form-field-container"></span></div>
+                                <div class="form-field">
+                                    <span class="form-field-container">
+                                        <input type="text"
+                                            name="your-full-name"
+                                            id="your-full-name"
+                                            placeholder="e.g. Mike Smith"
+                                            pattern="[A-Za-zÀ-ž\s]{7,}"
+                                            maxlength="75"
+                                            autocomplete="on"
+                                            accesskey="f"
+                                            required>
+                                    </span>
+                                </div>
                             </div>
                             <div class="form-group col-2-3">
                                 <label for="your-email">Email</label>
-                                <div class="form-field"><span class="form-field-container"></span></div>
+                                <div class="form-field">
+                                    <span class="form-field-container">
+                                        <input type="email"
+                                            name="your-email"
+                                            id="your-email"
+                                            placeholder="e.g. youremail@gmail.com"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                            maxlength="55"
+                                            autocomplete="on"
+                                            accesskey="e"
+                                            required>
+                                    </span>
+                                </div>
                             </div>
                             <div class="form-group col-2-3">
                                 <label for="your-message">Your message</label>
-                                <div class="form-field"><span class="form-field-container"></span></div>
+                                <div class="form-field">
+                                    <span class="form-field-container">
+                                        <textarea name="your-message"
+                                            id="your-message"
+                                            placeholder="Write your message here"
+                                            minlength="10"
+                                            accesskey="c"
+                                            required
+                                            cols="30"
+                                            rows="6"></textarea>
+                                    </span>
+                                </div>
                             </div>
-                            <a href="#" class="button">CALL TO ACTION</a>
+                            <button class="button">CALL TO ACTION</button>
                         </fieldset>
                     </form>
                 </div>
