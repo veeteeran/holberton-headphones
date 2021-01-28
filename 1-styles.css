@@ -48,7 +48,7 @@
       --text-color: var(--color-black);
       
       /** FONT **/
-      --font-family-base: "Source-Sans-Pro";
+      --font-family-base: "Source-Sans-Pro", 'Helvetica Neue', Helvetica, Arial, sans-serif;
   
       --font-size-small: 0.75rem;
       --font-size-medium: .9rem;
@@ -121,7 +121,10 @@
       text-decoration: none;
     }
   
-    button {
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: var(--button-width);
       height: var(--button-height);
       border-radius: var(--button-border-radius);
@@ -132,8 +135,9 @@
       margin-bottom: 80px;
     }
   
-    button:hover {
+    .button:hover {
       filter: brightness(0.8);
+      color: var(--color-white);
     }
   
   /*** 2. LAYOUT ***/
@@ -141,19 +145,8 @@
   /* Layout
         ============================= */
   
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-image: url(images/headphones_hero_1.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 800px;
-  }
-  
   .container {
-    max-width: 960px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -161,14 +154,14 @@
   /* Grid
       ============================= */
   
+      .row {
+        display: flex;
+      }
+
       ul.row {
         margin: -1rem;
         padding: 0;
         list-style: none;
-      }
-      
-      .row {
-        display: flex;
       }
       
       [class*='col-'] {
@@ -240,9 +233,12 @@
   }
 
   .header-container {
+    width: 100%;
+    position: absolute;
     display: flex;
-    justify-content: space-between;
-    margin: -5rem 0 0;
+    justify-content: space-around;
+    margin-top: 1.75rem;
+    z-index: 1;
   }
   
   .header-logo a img {
@@ -286,6 +282,17 @@
     width: 2rem;
     height: 100%;
   }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: url(images/headphones_hero_1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 800px;
+  }
   
   .section-body {
     display: flex;
@@ -293,6 +300,11 @@
     text-align: var(--section-text-align);
   }
 
+  .hero-placeholder {
+    visibility: hidden;
+    height: 3rem;
+  }
+  
   .section-title {
     font-weight: var(--font-weight-bold);
     margin: 0;
@@ -320,6 +332,7 @@
   }
 
   .section-what-we-do .icon-container {
+    display: flex;
     width: 62.6rem;
     height: 12.1rem;
     margin-top: 6.1rem;
@@ -409,6 +422,40 @@
   /* Responsive
         ============================= */
 
+  @media (max-width: 992px) {
+
+    .icon-container {
+      justify-content: center;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: .75fr .75fr;
+      grid-template-rows: 1fr 1fr;
+      justify-content: center;
+    }
+
+    .col-1-4 {
+      width: 75%;
+    }
+
+    .col-1-4.sound {
+      margin: 0 2rem 1rem 0;
+    }
+
+    .col-1-4.video {
+      margin: 0 0 1rem 2rem;
+    }
+
+    .col-1-4.music {
+      margin: 1rem 2rem 0 0;
+    }
+
+    .col-1-4.hearing {
+      margin: 1rem 0 0 2rem;
+    }
+  }
+
   @media (max-width: 767px) {
     :root {
       --nav-item-margin: 0;
@@ -442,5 +489,75 @@
       display: block;
       position: absolute;
       left: 2rem;
+    }
+
+    .section-body .section-inner {
+      width: 100%;
+    }
+
+    /* .col-1-4 p {
+      display: flex;
+      flex-wrap: wrap;
+    } */
+
+    /* .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .col-1-4 {
+      width: 100%;
+    }
+
+    li:nth-child(odd) {
+      margin-left: 2rem;
+    }
+
+    li:nth-child(even) {
+      margin-right: 2rem;
+    } */
+
+  }
+
+  @media (max-width: 480px) {
+
+    .section-inner {
+      width: 375px;
+    }
+
+    .wrapper {
+      width: 100%;
+    }
+
+    .section-what-we-do .section-inner {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: space-between;
+    }
+
+    .row {
+      /* width: 100%; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .col-1-4 {
+      width: calc((100% / 4) - 2rem);
+    }
+
+    .col-1-4.sound,
+    .col-1-4.video,
+    .col-1-4.music,
+    .col-1-4.hearing {
+      margin: 0 0 2rem 0;
     }
   }
