@@ -12,7 +12,7 @@
   ============================= */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
-/*# sourceMappingURL=normalize.min.css.map */
+/* # sourceMappingURL=normalize.min.css.map */
 
 @font-face {
     font-family: 'Source-Sans-Pro';
@@ -36,7 +36,7 @@
       --text-color: var(--color-black);
       
       /** FONT **/
-      --font-family-base: "Source-Sans-Pro";
+      --font-family-base: "Source-Sans-Pro", 'Helvetica Neue', Helvetica, Arial, sans-serif;
   
       --font-size-small: 0.75rem;
       --font-size-medium: .9rem;
@@ -105,19 +105,24 @@
       text-decoration: none;
     }
   
-    button {
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: var(--button-width);
       height: var(--button-height);
       border-radius: var(--button-border-radius);
       background-color: var(--color-salmon);
       color: var(--color-white);
       font-size: var(--font-size-medium);
+      font-weight: var(--font-weight-bold);
       filter: var(--button-filter);
       margin-bottom: 80px;
     }
   
-    button:hover {
+    .button:hover {
       filter: brightness(0.8);
+      color: var(--color-white);
     }
   
   /*** 2. LAYOUT ***/
@@ -131,12 +136,13 @@
     justify-content: space-around;
     background-image: url(images/headphones_hero_1.jpg);
     background-position: center center;
-    background-repeat: no-repeat;width: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
     height: 800px;
   }
   
   .container {
-    max-width: 960px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -200,7 +206,7 @@
   .header-container {
     display: flex;
     justify-content: space-between;
-    margin: -5rem 0 0;
+    margin: -5rem 7rem 0;
   }
   
   .header-logo a img {
@@ -254,6 +260,7 @@
   .section-hero .section-inner {
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family: var(--font-family-base);
     color: var(--color-white);
     text-align: var(--section-header-align);
