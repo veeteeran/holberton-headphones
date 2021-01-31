@@ -363,7 +363,6 @@
   }
 
   .section-what-we-do .section-inner,
-  /* .section-our-results .section-inner, */
   .section-post-comments .section-inner {
     margin-top: 6.9rem;
   }
@@ -450,10 +449,6 @@
     ============================= */
 
     form {
-      /* display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem 0; */
       margin: 0;
       width: 21rem;
     }
@@ -473,11 +468,6 @@
       white-space: nowrap;
       font-size: 14px;
       padding: 0 0 .5rem;
-    }
-
-    .form-field{
-      /* border-top: 1px solid var(--color-black);
-      opacity: 0.17; */
     }
 
     fieldset [class*='col-'] {
@@ -529,12 +519,6 @@
       height: 15.6rem;
       margin-top: 6.6rem;
     }
-
-    /* .footer .container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    } */
 
     .footer .row {
       justify-content: space-between;
@@ -714,10 +698,6 @@
     .row .social {
       margin-top: 0rem;
     }
-
-    /* .social-icons {
-      flex-direction: column;
-    } */
 
     .social-icons .social.nav  {
       margin-left: 2rem;
