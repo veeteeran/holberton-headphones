@@ -24,18 +24,6 @@
   src: url(./Spin-Cycle-OT/spincycle_ot.otf);
 }
 
-@font-face {
-  font-family: 'holberton_school-icon';
-  src:  url('fonts/holberton_school-icon.eot?sq4eq4');
-  src:  url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
-    url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
-    url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
-    url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
   /* Variables
     ============================= */
   
@@ -146,30 +134,17 @@
         ============================= */
   
   .dark {
-    /* position: absolute; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     background-image: url(images/headphones_hero_2.jpg);
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 6.6rem;
     width: 100%;
-    height: 650px;
   }
-
-  .pentagon-and-text {
-    position: absolute;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around; */
-    background-image: url(images/pentagone.png);
-    /* background-position: center center; */
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 190px;
-    height: 190px;
-  }
-
+  
   .container {
     max-width: 1000px;
     margin-left: auto;
@@ -179,27 +154,30 @@
   /* Grid
       ============================= */
   
-      .row {
-        display: flex;
-      }
+  .row,
+  .row-1,
+  .row-2 {
+    display: flex;
+  }
 
-      ul.row {
-        margin: -1rem;
-        padding: 0;
-        list-style: none;
-      }
-      
-      [class*='col-'] {
-        margin: 1rem;
-      }
-      
-      .col-1-4 {
-        width: calc((100% / 4) - 2rem);
-      }
+  ul.row {
+    margin: -1rem;
+    padding: 0;
+    list-style: none;
+  }
+  
+  [class*='col-'] {
+    margin: 1rem;
+  }
+  
+  .col-1-4 {
+    width: 207px;
+    height: 180px;
+  }
 
-      .col-1-4 p {
-        line-height: 186%;
-      }
+  .col-1-4 p {
+    line-height: 186%;
+  }
 
   /* Navbar
         ============================= */
@@ -252,10 +230,6 @@
   
   /* Header
         ============================= */
-
-  /* .header {
-    z-index: 2;
-  } */
   
   .menu-wrapper {
     display: none;
@@ -362,16 +336,24 @@
     color: var(--color-white);
   }
 
-  .section-what-we-do .section-inner,
-  .section-our-results .section-inner {
+  .section-what-we-do .section-body,
+  .section-our-results .section-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-what-we-do .section-inner {
     margin-top: 6.9rem;
   }
 
+  .section-our-results .section-inner {
+    margin-top: 8.8rem;
+  }
+
   .section-what-we-do .icon-container,
-  .section-our-results .icon-container {
+  .section-our-results .pentagon-container {
     display: flex;
-    width: 62.6rem;
-    height: 12.1rem;
     margin-top: 6.1rem;
   }
 
@@ -411,64 +393,34 @@
     top: 0;
   }
 
-  /* Icon
+  /* Pentagon
         ============================= */
-
-  [class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'holberton_school-icon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    font-size: var(--font-size-large);
-    /* width: 5.9rem; */
-    color: var(--color-salmon);
   
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  .pentagon-container .col-1-4 {
+    width: 190px;
+    height: 190px;;
   }
   
-  .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table;
-  }
-  .clearfix:after {
-    clear: both;
+  .pentagon-and-text {
+    display: flex;
+    justify-content: center;
   }
 
-  .icon {
-    font-size: 5.5rem;
+  .pentagon-text {
+    z-index: 2;
+    position: absolute;
+    color: var(--color-white);
   }
 
-  .holberton_school-icon-ic_sound:before {
-    content: "\e90e";
-  }
-
-  .holberton_school-icon-ic_video:before {
-    content: "\e910";
-  }
-
-  .holberton_school-icon-ic_music:before {
-    content: "\e90d";
-  }
-
-  .holberton_school-icon-ic_hearing:before {
-    content: "\e909";
-  }
-
-  .pentagon-and-text p {
+  .pentagon-text p {
     font-size: 14px;
   }
 
-  .pentagon-and-text p + p{
+  .pentagon-text p + p{
     margin-top: -3.5rem;
   }
 
-  .pentagon-and-text p:first-child{
+  .pentagon-text p:first-child{
     font-size: 2.9rem;
     font-weight: var(--font-weight-bold);
   }
@@ -476,44 +428,7 @@
   /* Responsive
         ============================= */
 
-  /* @media (max-width: 900px) {
-
-    .section-our-results .icon-container {
-      justify-content: center;
-      height: 24rem;
-    }
-
-    .section-our-results .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      justify-content: center;
-    }
-
-    .section-our-results .col-1-4 {
-      width: 75%;
-      margin: 0;
-    }
-
-    .section-our-results .col-1-4.sound {
-      margin: 0 0 1rem 2rem;
-      left: 3rem;
-    }
-
-    .section-our-results .col-1-4.video {
-      margin: 0 0 1rem 2rem;
-    }
-
-    .section-our-results .col-1-4.music {
-      margin: 1rem 2rem 0 0;
-    }
-
-    .section-our-results .col-1-4.hearing {
-      margin: 1rem 0 0 2rem;
-    }
-  } */
-
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     :root {
       --nav-item-margin: 0;
     }
@@ -548,49 +463,26 @@
       left: 2rem;
     }
 
+    .section {
+      margin: 0;
+    }
+
     .section-body {
       margin-left: 65px;
       margin-right: 65px;
     }
-
+    
     .section-body .section-inner, .dark {
       width: 100%;
     }
 
-    .icon-container {
-      justify-content: center;
+    .icon-container .row,
+    .pentagon-container .row {
+      flex-direction: column;
     }
 
-    .row {
-      display: grid;
-      grid-template-columns: .75fr .75fr;
-      grid-template-rows: 1fr 1fr;
-      justify-content: center;
-    }
-
-    .col-1-4 {
-      width: 75%;
-    }
-
-    .col-1-4.sound {
-      margin: 0 2rem 1rem 0;
-    }
-
-    .col-1-4.video {
-      margin: 0 0 1rem 2rem;
-    }
-
-    .col-1-4.music {
-      margin: 1rem 2rem 0 0;
-    }
-
-    .col-1-4.hearing {
-      margin: 1rem 0 0 2rem;
-    }
-
-    .dark {
-      position: absolute;
-      margin-top: 17rem;
+    .section-our-results .pentagon-container {
+      margin-bottom: 6rem;
     }
   }
 
@@ -604,47 +496,21 @@
       width: 100%;
     }
 
-    .section-what-we-do {
-      margin-bottom: 24rem;
-    }
-
-    .section-what-we-do .section-inner {
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .icon-container {
-      display: flex;
+    .row-1,
+    .row-2 {
       flex-direction: column;
-      align-content: center;
-      justify-content: space-between;
     }
-  
-    .row {
-      /* width: 100%; */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .col-1-4 {
-      width: calc((100% / 4) - 2rem);
-    }
-
-    .col-1-4.sound,
-    .col-1-4.video,
-    .col-1-4.music,
-    .col-1-4.hearing {
-      margin: 0 0 2rem 0;
-    }
-
+    
     .dark {
-      /* margin-top: 32rem; */
+      height: auto;
     }
 
-    .section-our-results .section-inner {
-      /* margin-top: 14rem; */
-      height: 1491px;
+    .dark .section-body {
+      margin-top: 2rem;
+    }
+
+    .section-our-results .pentagon-container {
+      margin-top: 2rem;
+      margin-bottom: 6rem;
     }
   }

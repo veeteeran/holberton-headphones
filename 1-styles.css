@@ -24,18 +24,6 @@
   src: url(./Spin-Cycle-OT/spincycle_ot.otf);
 }
 
-@font-face {
-  font-family: 'holberton_school-icon';
-  src:  url('fonts/holberton_school-icon.eot?sq4eq4');
-  src:  url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
-    url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
-    url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
-    url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
   /* Variables
     ============================= */
   
@@ -154,7 +142,9 @@
   /* Grid
       ============================= */
   
-      .row {
+      .row,
+      .row-1,
+      .row-2 {
         display: flex;
       }
 
@@ -163,14 +153,14 @@
         padding: 0;
         list-style: none;
       }
-      
+
       [class*='col-'] {
         margin: 1rem;
       }
       
       .col-1-4 {
-        width: calc((100% / 4) - 2rem);
-        flex-basis: 100%
+        width: 207px;
+        height: 180px;
       }
 
       .col-1-4 p {
@@ -329,14 +319,18 @@
     color: var(--color-white);
   }
 
+  .section-what-we-do .section-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .section-what-we-do .section-inner {
     margin-top: 6.9rem;
   }
 
   .section-what-we-do .icon-container {
     display: flex;
-    width: 62.6rem;
-    height: 12.1rem;
     margin-top: 6.1rem;
   }
 
@@ -372,91 +366,8 @@
     top: 0;
   }
 
-  /* Icon
-        ============================= */
-
-  [class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'holberton_school-icon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    font-size: var(--font-size-large);
-    /* width: 5.9rem; */
-    color: var(--color-salmon);
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table;
-  }
-  .clearfix:after {
-    clear: both;
-  }
-
-  .icon {
-    font-size: 5.5rem;
-  }
-
-  .holberton_school-icon-ic_sound:before {
-    content: "\e90e";
-  }
-
-  .holberton_school-icon-ic_video:before {
-    content: "\e910";
-  }
-
-  .holberton_school-icon-ic_music:before {
-    content: "\e90d";
-  }
-
-  .holberton_school-icon-ic_hearing:before {
-    content: "\e909";
-  }
-
   /* Responsive
         ============================= */
-
-  /* @media (max-width: 992px) {
-
-    .icon-container {
-      justify-content: center;
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: .75fr .75fr;
-      grid-template-rows: 1fr 1fr;
-      justify-content: center;
-    }
-
-    .col-1-4 {
-      width: 75%;
-    }
-
-    .col-1-4.sound {
-      margin: 0 2rem 1rem 0;
-    }
-
-    .col-1-4.video {
-      margin: 0 0 1rem 2rem;
-    }
-
-    .col-1-4.music {
-      margin: 1rem 2rem 0 0;
-    }
-
-    .col-1-4.hearing {
-      margin: 1rem 0 0 2rem;
-    }
-  } */
 
   @media (max-width: 767px) {
     :root {
@@ -502,35 +413,8 @@
       width: 100%;
     }
 
-    .icon-container {
-      justify-content: center;
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: .75fr .75fr;
-      grid-template-rows: 1fr 1fr;
-      justify-content: center;
-    }
-
-    .col-1-4 {
-      width: 75%;
-    }
-
-    .col-1-4.sound {
-      margin: 0 2rem 1rem 0;
-    }
-
-    .col-1-4.video {
-      margin: 0 0 1rem 2rem;
-    }
-
-    .col-1-4.music {
-      margin: 1rem 2rem 0 0;
-    }
-
-    .col-1-4.hearing {
-      margin: 1rem 0 0 2rem;
+    .icon-container .row {
+      flex-direction: column;
     }
 
   }
@@ -545,34 +429,8 @@
       width: 100%;
     }
 
-    .section-what-we-do .section-inner {
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .icon-container {
-      display: flex;
+    .row-1,
+    .row-2 {
       flex-direction: column;
-      align-content: center;
-      justify-content: space-between;
-    }
-
-    .row {
-      /* width: 100%; */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .col-1-4 {
-      width: calc((100% / 4) - 2rem);
-    }
-
-    .col-1-4.sound,
-    .col-1-4.video,
-    .col-1-4.music,
-    .col-1-4.hearing {
-      margin: 0 0 2rem 0;
     }
   }
